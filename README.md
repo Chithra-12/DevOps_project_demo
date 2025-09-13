@@ -9,10 +9,15 @@ The code is organized into reusable modules and backend configuration for better
 
 EKS_terraform_clean/
 ├── Backend/ # Remote backend configuration for storing Terraform state in S3 and DynamoDB
+
 ├── Modules/ # Reusable modules for networking, IAM roles, and EKS resources
+
 ├── main.tf # Root Terraform configuration that ties modules together
+
 ├── variables.tf # Input variables for customization
+
 ├── output.tf # Outputs to display after provisioning
+
 └── .gitignore # Prevents unnecessary files (state, providers) from being committed
 
 
