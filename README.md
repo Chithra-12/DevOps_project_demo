@@ -8,6 +8,7 @@ The code is organized into reusable modules and backend configuration for better
 ## 📂 Repository Structure
 
 EKS_terraform_clean/
+
 ├── Backend/ # Remote backend configuration for storing Terraform state in S3 and DynamoDB
 
 ├── Modules/ # Reusable modules for networking, IAM roles, and EKS resources
