@@ -93,15 +93,12 @@ EKS_terraform_clean/
    terraform init
 
 2. **Review the plan**
-
    terraform plan
 
 4. **Apply changes**
-
    terraform apply
  
 6. **To destroy resources**
-
    terraform destroy
 
 Notes
