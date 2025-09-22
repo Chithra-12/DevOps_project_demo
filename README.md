@@ -118,5 +118,4 @@ Running terraform apply will provision:
 A fully functional EKS cluster.
 VPC networking (subnets, route tables, etc.).
 IAM roles and security groups for EKS and worker nodes.
-Scalable worker nodes ready for Kubernetes workloads.
 
