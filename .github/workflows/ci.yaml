@@ -45,7 +45,7 @@ jobs:
           with:
             version: v1.55.2
             run: golangci-lint run
-            working-directory: src/product-catalog
+            working-directory: DevOps_project_demo/Docker/Product-catalog
 
     docker:
         runs-on: ubuntu-latest
@@ -69,7 +69,7 @@ jobs:
           uses: docker/build-push-action@v6
           with:
             context: src/product-catalog
-            file: src/product-catalog/Dockerfile
+            file: DevOps_project_demo/Docker/Product-catalog/Dockerfile
             push: true
             tags: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}
 
@@ -87,7 +87,7 @@ jobs:
 
         - name: Update tag in kubernetes deployment manifest
           run: | 
-               sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}|" kubernetes/productcatalog/deploy.yaml
+               sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}|" kubernetes/product-catalog/deploy.yaml
         
         - name: Commit and push changes
           run: |
