@@ -19,13 +19,13 @@ jobs:
         
         - name: Build
           run: |
-            cd src/product-catalog
+            cd 
             go mod download
             go build -o product-catalog-service main.go
 
         - name: unit tests
           run: |
-            cd src/product-catalog
+            cd DevOps_project_demo/Docker/Product-catalog
             go test ./...
     
     code-quality:
@@ -68,7 +68,7 @@ jobs:
         - name: Docker Push
           uses: docker/build-push-action@v6
           with:
-            context: src/product-catalog
+            context: DevOps_project_demo/Docker/Product-catalog
             file: DevOps_project_demo/Docker/Product-catalog/Dockerfile
             push: true
             tags: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}
